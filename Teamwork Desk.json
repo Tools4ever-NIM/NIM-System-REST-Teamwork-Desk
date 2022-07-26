@@ -1,0 +1,304 @@
+{
+    "schema": {
+        "options": {},
+        "crud_objects": {
+            "companies": {
+                "operations": {
+                    "companiesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/companies.json"
+                        },
+                        "processing_options": {
+                            "output_field": "companies"
+                        },
+                        "query_parameters": {
+                        }
+                    },
+                    "companiesCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v2/companies.json"
+                        },
+                        "query_parameters": {},
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_mandatory": [
+                            "name"
+                        ]
+                    },
+                    "companiesUpdate": {
+                        "method": "patch",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v2/companies/{id}.json"
+                        },
+                        "query_parameters": {},
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    },
+                    "companiesDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v2/companies/{id}.json"
+                        },
+                        "query_parameters": {},
+                        "semantics": "delete",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                        "address": {
+                          "delete": "_:boolean*",
+                          "id": "_:number*",
+                          "meta": "_:string*",
+                          "type": "_:number*"
+                        },
+                        "avatarPath": "string*",
+                        "createdAt": "date*",
+                        "createdBy": {
+                          "delete": "_:boolean*",
+                          "id": "_:number*",
+                          "meta": "_:string*",
+                          "type": "_:number*"
+                        },
+                        "customers": [
+                          {
+                            "delete": "boolean*",
+                            "id": "number*",
+                            "meta": "string*",
+                            "type": "number*"
+                          }
+                        ],
+                        "customersCount": "number*",
+                        "deletedAt": "date*",
+                        "deletedBy": {
+                          "delete": "_:boolean*",
+                          "id": "_:number*",
+                          "meta": "_:string*",
+                          "type": "_:number*"
+                        },
+                        "details": "string",
+                        "domains": [
+                          {
+                            "delete": "boolean*",
+                            "id": "number*",
+                            "meta": "string*",
+                            "type": "number*"
+                          }
+                        ],
+                        "email": "string",
+                        "id": "number*",
+                        "industry": "string*",
+                        "kind": "string*",
+                        "name": "string*",
+                        "permission": "string*",
+                        "phones": [
+                          {
+                            "delete": "boolean*",
+                            "id": "number*",
+                            "meta": "string*",
+                            "type": "number*"
+                          }
+                        ],
+                        "sociallinks": [
+                          {
+                            "delete": "boolean*",
+                            "id": "number*",
+                            "meta": "string*",
+                            "type": "number*"
+                          }
+                        ],
+                        "state": "string",
+                        "updatedAt": "date*",
+                        "updatedBy": {
+                          "delete": "_:boolean*",
+                          "id": "_:number*",
+                          "meta": "_:string*",
+                          "type": "_:number*"
+                        },
+                        "website": "string*"
+                      
+                }
+            },
+            "customers": {
+                "operations": {
+                    "customersList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/customers.json"
+                        },
+                        "processing_options": {
+                            "output_field": "companies"
+                        },
+                        "query_parameters": {
+                        }
+                    },
+                    "customersCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v2/customers.json"
+                        },
+                        "query_parameters": {},
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_mandatory": [
+                            "firstName",
+                            "lastName",
+                            "email"
+                        ]
+                    },
+                    "customersUpdate": {
+                        "method": "patch",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v2/customers/{id}.json"
+                        },
+                        "query_parameters": {},
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    },
+                    "customersDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v2/customers/{id}.json"
+                        },
+                        "query_parameters": {},
+                        "semantics": "delete",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "addMethod": "string*",
+                    "address": "string*",
+                    "avatarURL": "string*",
+                    "company": {
+                        "delete": ":boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                    },
+                    "contacts": [
+                      {
+                        "delete": "_:boolean*",
+                        "id": "_:number*",
+                        "meta": "_:string*",
+                        "type": "_:number*"
+                      }
+                    ],
+                    "createdAt": "date*",
+                    "createdBy": {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                    },
+                    "customerwelcomeemails": [
+                      {
+                        "delete": "_:boolean*",
+                        "id": "_:number*",
+                        "meta": "_:string*",
+                        "type": "_:number*"
+                      }
+                    ],
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                    },
+                    "email": "string*",
+                    "externalId": "string*",
+                    "extraData": "string*",
+                    "facebookURL": "string*",
+                    "firstName": "string*",
+                    "id": "number*",
+                    "jobTitle": "string*",
+                    "lastName": "string*",
+                    "linkedinURL": "string*",
+                    "mobile": "string*",
+                    "notes": "string*",
+                    "numTickets": "number*",
+                    "organization": "string",
+                    "password": "string*",
+                    "permission": "string*",
+                    "phone": "string*",
+                    "state": "string*",
+                    "trusted": "boolean*",
+                    "twitterHandle": "string*",
+                    "updatedAt": "date*",
+                    "updatedBy": {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                    },
+                    "verifiedEmail": "boolean*",
+                    "welcomeEmailSent": "boolean*"
+                  }
+            }
+        }
+    },
+    "rest": {
+        "config": {
+            "baseUrl": "{tenant_id}",
+            "get": {
+                "maxPageCount": 500,
+                "query_parameters": {
+                },
+                "pagination": {
+                    "mode": "generic",
+                   "path":[],
+                    "params":{
+                        "page":"{page_number}",
+                        "pagesize":"500"
+                    }
+                }
+            },
+            "authentication": "basic_auth",
+            "call_handling": "generic",
+            "test_connection": {
+                "url": "/v2/companies.json"
+            },
+            "accept": "application/json"
+        }
+        
+    },
+    "connection": {
+        "items": [
+            {
+                "name": "tenant_id",
+                "type": "textbox",
+                "label": "Tenent URL:",
+                "value": ""
+            },
+            {
+                "name": "updated_after",
+                "type": "textbox",
+                "label": "Updated After Date:",
+                "value": "20200101"
+            }
+        ]
+    }
+}
