@@ -2,6 +2,119 @@
     "schema": {
         "options": {},
         "crud_objects": {
+            "announcement": {
+                "operations": {
+                    "announcementList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/announcement.json"
+                        },
+                        "processing_options": {
+                            "output_field": "announcement"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "content",
+                "resources": {
+                    "content": "string*",
+                    "isadminonly": "boolean*"
+                }
+            },
+            "appfeatures": {
+                "operations": {
+                    "appfeaturesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/appfeatures.json"
+                        },
+                        "processing_options": {
+                            "output_field": "appfeatures"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "name": "boolean*"
+                }
+            },
+            "apps": {
+                "operations": {
+                    "appsList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/apps.json"
+                        },
+                        "processing_options": {
+                            "output_field": "apps"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "code": "string*",
+                    "name": "string*",
+                    "description": "string*",
+                    "logoURL": "string*",
+                    "baseURL": "string*",
+                    "url": "string*",
+                    "isInstalled": "boolean*",
+                    "createdAt": "string*",
+                    "updatedAt": "string*",
+                    "appsettings": [
+                        {
+                            "id": "string*",
+                            "type": "string*"
+                        }
+                    ]
+                }
+            },
+            "businesshours": {
+                "operations": {
+                    "businesshoursList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/businesshours.json"
+                        },
+                        "processing_options": {
+                            "output_field": "businesshours"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "name": "string*",
+                    "description": "string*",
+                    "isDefault": "boolean*",
+                    "timezoneId": "string*",
+                    "timezone_name": "string*",
+                    "createdAt": "string*",
+                    "updatedAt": "string*",
+                    "createdBy": {
+                        "id": "string*",
+                        "type": "string*"
+                    },
+                    "updatedBy": {
+                        "id": "string*",
+                        "type": "string*"
+                    },
+                    "state": "string*"
+                }
+            },
             "companies": {
                 "operations": {
                     "companiesList": {
@@ -139,7 +252,7 @@
                             "path": "/v2/customers.json"
                         },
                         "processing_options": {
-                            "output_field": "companies"
+                            "output_field": "customers"
                         },
                         "query_parameters": {
                         }
@@ -257,12 +370,805 @@
                     "verifiedEmail": "boolean*",
                     "welcomeEmailSent": "boolean*"
                   }
+            },
+            "tickets": {
+                "operations": {
+                    "ticketsList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/tickets.json"
+                        },
+                        "processing_options": {
+                            "output_field": "tickets"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "agent": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "businesshours": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "children": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "company": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "companycustomers": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "contact": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "customer": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "customfields": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "files": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "followers": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "happinessRating": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "id": "number*",
+                    "imagesHidden": "boolean*",
+                    "inaccessibleChildTickets": "boolean*",
+                    "inbox": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "isRead": "boolean*",
+                    "messageCount": "number*",
+                    "messages": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "meta": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "originalRecipient": "string*",
+                    "parent": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "pinnednotes": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "previewText": "string*",
+                    "priority": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "readonly": "boolean*",
+                    "resolutionTimeMins": "number*",
+                    "responseTimeMins": "number*",
+                    "review": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "reviewcomments": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "scheduledEmail": {
+                      "delete": "boolean*",
+                      "id": "number*",
+                      "meta": "string*",
+                      "type": "number*"
+                    },
+                    "source": {
+                      "delete": "boolean*",
+                      "id": "number*",
+                      "meta": "string*",
+                      "type": "number*"
+                    },
+                    "spam": {
+                      "isSpam": "_:boolean*",
+                      "reasons": "_:string*",
+                      "reports": [
+                        {
+                          "reasons": "_:string*"
+                        }
+                      ],
+                      "score": "_:number*"
+                    },
+                    "spam_rules": "string*",
+                    "spam_score": "number*",
+                    "state": "string*",
+                    "status": {
+                      "delete": "boolean*",
+                      "id": "number*",
+                      "meta": "string*",
+                      "type": "number*"
+                    },
+                    "subject": "string*",
+                    "tags": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "tasks": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "threademailrefs": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "timelogs": [
+                      {
+                        "delete": "boolean*",
+                        "id": "number*",
+                        "meta": "string*",
+                        "type": "number*"
+                      }
+                    ],
+                    "type": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    }
+                  }
+            },
+            "ticketActivities": {
+                "operations": {
+                    "ticketStatusesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/tickets/activities.json"
+                        },
+                        "processing_options": {
+                            "output_field": "ticketactivities"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "childTicket": {
+                      "delete": "boolean*",
+                      "id": "number*",
+                      "meta": "string*",
+                      "type": "number*"
+                    },
+                    "color": "string*",
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "customer": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "eventType": "string*",
+                    "icon": "string*",
+                    "id": "number*",
+                    "inbox": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "mergedTicket": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "message": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "oldInbox": {
+                      "delete": "_:boolean*",
+                      "id": "_:umber*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "priority": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "source": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "state": "string*",
+                    "status": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "targetAgent": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "task": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "ticket": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "type": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    }
+                  }
+            },
+            "ticketPriorities": {
+                "operations": {
+                    "ticketStatusesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/ticketpriorities.json"
+                        },
+                        "processing_options": {
+                            "output_field": "ticketpriorities"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "color": "string*",
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "displayOrder": "number*",
+                    "icon": "string*",
+                    "id": "number*",
+                    "name": "string*",
+                    "state": "string*",
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    }
+                  }
+            },
+            "ticketsRead": {
+                "operations": {
+                    "timeLogsList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/ticketsread.json"
+                        },
+                        "processing_options": {
+                            "output_field": "ticketsread"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "id": "number*",
+                    "message": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "state": "string*",
+                    "threadsId": "number*",
+                    "ticket": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "ticketsId": "number*",
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    }
+                  }
+            },
+            "ticketSources": {
+                "operations": {
+                    "ticketSourcesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/ticketsources.json"
+                        },
+                        "processing_options": {
+                            "output_field": "ticketsources"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "icon": "string",
+                    "id": "number*",
+                    "name": "string*",
+                    "state": "string*",
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    }
+                  }
+            },
+            "ticketStatuses": {
+                "operations": {
+                    "ticketStatusesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/ticketstatuses.json"
+                        },
+                        "processing_options": {
+                            "output_field": "ticketstatuses"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "displayOrder": "number*",
+                    "id": "number*",
+                    "name": "string*",
+                    "state": "string*",
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    }
+                  }
+            },
+            "ticketTypes": {
+                "operations": {
+                    "ticketTypesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/tickettypes.json"
+                        },
+                        "processing_options": {
+                            "output_field": "tickettypes"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "displayOrder": "number*",
+                    "id": "number*",
+                    "name": "string",
+                    "state": "string",
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    }
+                  }
+            },
+            "timeLogs": {
+                "operations": {
+                    "timeLogsList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/timelogs.json"
+                        },
+                        "processing_options": {
+                            "output_field": "timelogs"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "assignToCurrentUser": "boolean*",
+                    "billable": "boolean*",
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "date": "string*",
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "description": "string*",
+                    "id": "number*",
+                    "postToProject_id": "number*",
+                    "projectsTimelogs_id": "number*",
+                    "seconds": "number*",
+                    "state": "string*",
+                    "ticket": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "tickets_id": "number*",
+                    "timelogs_id": "number*",
+                    "timezoneOffset": "number*",
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "user": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "users_id": "number*"
+                  }
+            },
+            "userPreferences": {
+                "operations": {
+                    "userPreferencesList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/userpreferences.json"
+                        },
+                        "processing_options": {
+                            "output_field": "userpreferences"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "id": "number*",
+                    "name": "string*",
+                    "preference": "string*",
+                    "state": "string*",
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    }
+                  }
+            },
+            "users": {
+                "operations": {
+                    "usersList": {
+                        "method": "get",
+                        "call": {
+                            "path": "/v2/users.json"
+                        },
+                        "processing_options": {
+                            "output_field": "users"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "avatarURL": "string*",
+                    "createdAt": "string*",
+                    "createdBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "deletedAt": "string*",
+                    "deletedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "editMethod": "string*",
+                    "email": "string*",
+                    "firstName": "string*",
+                    "id": "number*",
+                    "isAppOwner": "boolean*",
+                    "isPartTime": "boolean*",
+                    "lastName": "string*",
+                    "ldKey": "string*",
+                    "onboarding": {
+                      "addedFirstInbox": "_:boolean*",
+                      "bookmarkPage": "_:boolean*",
+                      "checkDeskHelpSite": "_:boolean*",
+                      "checkSampleInbox": "_:boolean*",
+                      "dismissedWelcome": "_:boolean*",
+                      "exploreHelpsites": "_:boolean*",
+                      "exploreReports": "_:boolean*",
+                      "inviteTeam": "_:boolean*",
+                      "repliedToFirstTicket": "_:boolean*",
+                      "reviewedCompanySettings": "_:boolean*",
+                      "reviewedProfile": "_:boolean*"
+                    },
+                    "projectsCompanyId": "number*",
+                    "reviewer": "boolean*",
+                    "role": "string*",
+                    "sendPushNotifications": "boolean*",
+                    "sendWebNotifications": "boolean*",
+                    "state": "string*",
+                    "ticketReplyRedirect": "string*",
+                    "timeFormatId": "number*",
+                    "timezoneId": "number*",
+                    "trainingWheelsEnrollment": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    },
+                    "updatedAt": "string*",
+                    "updatedBy": {
+                      "delete": "_:boolean*",
+                      "id": "_:number*",
+                      "meta": "_:string*",
+                      "type": "_:number*"
+                    }
+                  }
             }
         }
     },
     "rest": {
         "config": {
-            "baseUrl": "{tenant_id}",
+            "baseUrl": "{tenant_id}/api",
             "get": {
                 "maxPageCount": 500,
                 "query_parameters": {
@@ -276,29 +1182,21 @@
                     }
                 }
             },
-            "authentication": "basic_auth",
+            "authentication": "aeries",
             "call_handling": "generic",
             "test_connection": {
                 "url": "/v2/companies.json"
             },
-            "accept": "application/json"
+            "accept": "application/json",
+            "headers": {
+                "Authorization": "Bearer {client_secret}"
+            }
         }
         
     },
     "connection": {
         "items": [
-            {
-                "name": "tenant_id",
-                "type": "textbox",
-                "label": "Tenent URL:",
-                "value": ""
-            },
-            {
-                "name": "updated_after",
-                "type": "textbox",
-                "label": "Updated After Date:",
-                "value": "20200101"
-            }
+        
         ]
     }
 }
