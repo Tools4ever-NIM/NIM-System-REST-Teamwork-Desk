@@ -1,28 +1,29 @@
-# NIM-System-REST-Teamwork-Desk
-This is a native rest connector for Teamwork Dsk
+# Teamwork Desk
+<img src="https://github.com/Tools4ever-NIM/NIM-System-REST-Teamwork-Desk/assets/24281600/941f2ad1-546a-4387-9063-8cca9167f80a" width="256px" />
 
-## Table of Contents
-* [Getting Started](#getting-started)
+## Data Tables
+- Annoucement
+- App Features
+- Apps
+- Business Hours
+- Companies
+- Customers
+- Tickets
+- Ticket Activities
+- Ticket Priorities
+- Tickets Read
+- Ticket Sources
+- Ticket Statues
+- Ticket Types
+- Time Logs
+- User Preferences
+- Users
 
-## Getting Started
-[https://apidocs.teamwork.com/docs/teamwork](https://apidocs.teamwork.com/docs/desk)
-
-## Available Tables
-* announcement
-* appfeatures
-* businesshouses
-* companies
-* customers
-* tickets
-* ticketActivities
-* ticketPriorities
-* ticketReads
-* ticketSources
-* ticketStatuses
-* ticketTypes
-* timelogs
-* userPreferences
-* users
+## Actions
+- Companies
+    - Create/Update/Delete
+- Customers
+    - Create/Update/Delete
 
 # NIM Docs
 The official NIM documentation can be found at: https://docs.nimsuite.com
