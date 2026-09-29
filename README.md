@@ -1,4 +1,7 @@
 # Teamwork Desk
+
+Read the [Teamwork Desk integration documentation](https://docs.nimsuite.com/en/integrations/teamwork-desk) for connector details and related guides.
+
 <img src="https://github.com/Tools4ever-NIM/NIM-System-REST-Teamwork-Desk/assets/24281600/941f2ad1-546a-4387-9063-8cca9167f80a" width="256px" />
 
 ## Data Tables
